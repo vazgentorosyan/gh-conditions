@@ -74,7 +74,10 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy
-        run: echo "Deploying..."
+        run: |
+         echo "Deploying..."
+         echo "Deployment failed..."
+         exit 1
   report:
     needs: [lint, deploy]
     if: failure()
